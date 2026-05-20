@@ -102,10 +102,9 @@ body::after {
 }
 
 /* --- LUXURY FLOATING CAPSULE NAVBAR --- */
-/* --- PREMIUM FLOATING PILL NAVBAR --- */
 header {
-  position: sticky;
-  top: 1.5rem; /* TWEAK: Pushes the pill down so it floats beautifully */
+  position: fixed;
+  top: 1.5rem;
   left: 50%;
   transform: translateX(-50%);
   width: 90%;
@@ -134,13 +133,6 @@ nav {
   background: linear-gradient(120deg, #fff, #9ca3af);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  cursor: pointer; /* Added for UI feedback */
-}
-
-/* TWEAK: Ensure the container uses flex */
-.nav-links {
-  display: flex;
-  align-items: center;
 }
 
 .nav-links a {
@@ -160,41 +152,6 @@ nav {
   color: #fff;
   background: rgba(255, 255, 255, 0.05);
   box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
-}
-
-/* --- MOBILE RESPONSIVENESS (For your React Burger Menu) --- */
-.burger {
-  display: none; 
-  cursor: pointer;
-  flex-direction: column;
-  gap: 5px;
-}
-
-.burger span {
-  width: 24px;
-  height: 2px;
-  background-color: #ffffff;
-  border-radius: 2px;
-  transition: all 0.3s ease;
-}
-
-@media (max-width: 768px) {
-  header {
-    width: 95%;
-    top: 1rem;
-  }
-  
-  nav {
-    padding: 0.8rem 1.5rem;
-  }
-
-  .burger {
-    display: flex; 
-  }
-  
-  .nav-links {
-    display: none; /* Hides the links until you write the JS to open the menu */
-  }
 }
 
 /* --- STAGGERED HERO SECTION --- */
@@ -336,7 +293,6 @@ nav {
 /* --- SECTIONS --- */
 section {
   padding: 10rem 0;
-  scroll-margin-top: 6rem;
 }
 
 .section-title {
@@ -1211,43 +1167,41 @@ footer p {
 /* 3. Horizontal Channels Grid */
 .direct-channels-list.horizontal {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Forces exactly 3 equal columns */
-  gap: 1.5rem;
+  /* This ensures exactly 3 equal columns that automatically stack on mobile */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
   width: 100%;
-  max-width: 1000px; /* Gives them enough room to breathe */
+  margin-top: 2rem; 
 }
 
 .channel-card {
   display: flex;
   align-items: center;
-  gap: 1.25rem;
-  background: rgba(17, 24, 39, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.03);
+  gap: 1rem;
   padding: 1.25rem;
-  border-radius: 16px;
+  background-color: #0d1117; /* Match this to your exact card background */
+  border: 1px solid rgba(255, 255, 255, 0.05); /* Subtle border */
+  border-radius: 12px;
   text-decoration: none;
-  transition: all 0.3s ease;
-  /* Removed the flex: 1 and min-width properties that were causing the wrap */
+  overflow: hidden; /* Essential for keeping children contained */
+  transition: transform 0.2s ease, border-color 0.2s ease;
 }
 
 .channel-card:hover {
-  background: rgba(59, 130, 246, 0.04);
-  border-color: rgba(59, 130, 246, 0.15);
-  transform: translateY(-4px); /* Pushes cards up on hover instead of right */
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
 }
 
 .channel-icon {
-  width: 44px;
-  height: 44px;
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  border-radius: 12px;
+  flex-shrink: 0; /* Prevents the icon from squishing */
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #60a5fa;
-  transition: all 0.3s ease;
-  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.03);
+  border-radius: 8px;
+  color: #58a6ff;
 }
 
 .channel-card:hover .channel-icon {
@@ -1258,22 +1212,24 @@ footer p {
 .channel-details {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
+  /* CRITICAL: min-width: 0 allows text truncation to work inside flex/grid items */
+  min-width: 0; 
 }
 
 .channel-label {
   font-size: 0.75rem;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  color: #6b7280;
-  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: #8b949e; /* Subtitle color */
+  margin-bottom: 0.25rem;
 }
 
 .channel-value {
-  font-size: 0.95rem;
-  color: #d1d5db;
-  margin-top: 0.15rem;
+  font-size: 0.9rem;
+  color: #c9d1d9; /* Main text color */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; /* Adds the "..." to long emails/URLs */
 }
 
 /* Mobile Responsiveness */
@@ -1401,3 +1357,94 @@ footer p {
     padding: 2rem;
   }
 }
+
+/* 1. Footer Wrapper */
+.site-footer {
+  width: 100%;
+  padding: 4rem 1rem 2rem 1rem; /* Adds space above the footer */
+  /* Optional: add a subtle top border to separate it from the main content */
+  /* border-top: 1px solid rgba(255, 255, 255, 0.05); */ 
+}
+
+/* 2. Flexbox Centering Container */
+.direct-channels-list.horizontal {
+  display: flex;
+  flex-wrap: wrap; /* Allows them to stack on mobile */
+  justify-content: center; /* This pushes them into the middle! */
+  gap: 1rem;
+  max-width: 900px;
+  margin: 0 auto; 
+}
+
+/* 3. Smaller Cards */
+.channel-card {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem; 
+  padding: 0.75rem 1rem; /* Reduced padding makes the card smaller */
+  width: 240px; /* Forces all 3 cards to be exactly this wide */
+  background-color: #0d1117; 
+  border: 1px solid rgba(255, 255, 255, 0.05); 
+  border-radius: 10px;
+  text-decoration: none;
+  overflow: hidden; 
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.channel-card:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+/* 4. Smaller Icon Box */
+.channel-icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px; /* Reduced from 40px */
+  height: 32px; /* Reduced from 40px */
+  background-color: rgba(255, 255, 255, 0.03);
+  border-radius: 6px;
+}
+
+/* 5. Text Container (Truncation still required) */
+.channel-details {
+  display: flex;
+  flex-direction: column;
+  min-width: 0; 
+}
+
+.channel-label {
+  font-size: 0.7rem; /* Slightly smaller text */
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #8b949e; 
+  margin-bottom: 0.15rem;
+}
+
+.channel-value {
+  font-size: 0.85rem; /* Slightly smaller text */
+  color: #c9d1d9; 
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; 
+}
+
+/* 1. Container for the copyright text */
+.footer-copyright {
+  text-align: center; /* This fixes the alignment! */
+  margin-top: 3rem; /* Pushes it down away from the cards */
+  padding-top: 1.5rem;
+  /* Optional: Adds a very faint line above the text to separate it */
+  border-top: 1px solid rgba(255, 255, 255, 0.05); 
+}
+
+/* 2. The text itself */
+.footer-copyright p {
+  color: #8b949e; /* Matches the grey color of your card labels */
+  font-size: 0.85rem;
+  margin: 0;
+  letter-spacing: 0.02em;
+}
+
