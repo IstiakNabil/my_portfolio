@@ -1108,7 +1108,7 @@ textarea:focus {
     text-align: center;
     padding: 1rem;
   }
-}
+
   .hero {
   flex-direction: column;
   text-align: center;
@@ -1184,7 +1184,7 @@ textarea:focus {
   .channel-card {
     width: 100%;
   }
-
+  }
 
 @media (max-width: 650px) {
   .arsenal-grid {
