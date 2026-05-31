@@ -750,9 +750,26 @@ input:focus, textarea:focus {
 /* =========================
    FOOTER
 ========================= */
-.site-footer { width: 100%; padding: 4rem 1rem 2rem; }
-.footer-copyright { text-align: center; margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid rgba(255, 255, 255, 0.05); }
-.footer-copyright p { color: #8b949e; font-size: 0.85rem; }
+.site-footer { 
+  width: 100%; 
+  padding: 4rem 1rem 2rem; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;    /* Centers the card list horizontally */
+}
+
+.footer-copyright { 
+  width: 100%;
+  text-align: center; 
+  margin-top: 4rem;       /* Adds a nice big gap between the cards and the copyright line */
+  padding-top: 1.5rem; 
+  border-top: 1px solid rgba(255, 255, 255, 0.05); 
+}
+
+.footer-copyright p { 
+  color: #8b949e; 
+  font-size: 0.85rem; 
+}
 
 /* =========================
    SOCIAL LINKS
