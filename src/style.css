@@ -121,31 +121,6 @@ body {
   animation: floatGlow 16s infinite ease-in-out reverse;
 }
 
-body::before,
-body::after {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  pointer-events: none;
-}
-
-body::before {
-  width: 700px;
-  height: 700px;
-  background: radial-gradient(var(--accent-glow) 0%, transparent 70%);
-  top: -10%;
-  left: -10%;
-  animation: floatGlow 12s infinite ease-in-out;
-}
-
-body::after {
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(rgba(139, 92, 246, 0.12) 0%, transparent 70%);
-  top: 50%;
-  right: -10%;
-  animation: floatGlow 16s infinite ease-in-out reverse;
-}
 
 /* =========================
    GLOBAL CONTAINER
@@ -747,6 +722,8 @@ input:focus, textarea:focus {
 @media (max-width: 768px) {
   header {
     top: 0;
+    left: 0;           /* ADD THIS */
+    transform: none;   /* ADD THIS */
     width: 100%;
     border-radius: 0;
     border-inline: none;
