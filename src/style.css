@@ -70,11 +70,11 @@ body {
 @keyframes revealDown {
   0% {
     opacity: 0;
-    transform: translate(-50%, -20px);
+    transform: translateY(-20px);
   }
   100% {
     opacity: 1;
-    transform: translate(-50%, 0);
+    transform: translateY(0); /* Clean vertical drop, no horizontal shifting */
   }
 }
 
@@ -147,26 +147,28 @@ body {
 ========================= */
 header {
   position: fixed;
-  top: 1.5rem;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 90%;
-  max-width: 800px;
+  top: 0;              /* Flush against the top edge */
+  left: 0;             /* Flush against the left edge */
+  width: 100%;         /* Spans the entire screen */
+  max-width: none;     /* Removes the previous 800px limit */
   background: rgba(3, 7, 18, 0.85);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
-  border: var(--border);
-  border-radius: 100px;
+  border: none;        /* Removes the box border */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* Adds a subtle line at the bottom */
+  border-radius: 0;    /* Removes the rounded pill shape */
   z-index: 1000;
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   animation: revealDown 1s var(--ease-premium) forwards;
 }
 
 nav {
-  padding: 0.8rem 2rem;
+  padding: 1rem 2rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* Pushes Logo left, Links right */
   align-items: center;
+  max-width: 1100px;   /* Pro-tip: Matches your main .container width! */
+  margin: 0 auto;      /* Keeps your logo and links perfectly aligned with your page content */
   position: relative;
 }
 
