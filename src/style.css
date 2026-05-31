@@ -18,7 +18,10 @@
 #root { 
   overflow-x: hidden;
   width: 100%;
+  min-height: 100vh; /* Added this */
   position: relative; 
+  /* We also need to add z-index to create a new stacking context */
+  z-index: 0; 
 }
 
 /* =========================
@@ -88,6 +91,36 @@ body {
 /* =========================
    BACKGROUND GLOW
 ========================= */
+
+/* =========================
+   BACKGROUND GLOW
+========================= */
+#root::before,
+#root::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+}
+
+#root::before {
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(var(--accent-glow) 0%, transparent 70%);
+  top: -10%;
+  left: -10%;
+  animation: floatGlow 12s infinite ease-in-out;
+}
+
+#root::after {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(rgba(139, 92, 246, 0.12) 0%, transparent 70%);
+  top: 50%;
+  right: -10%;
+  animation: floatGlow 16s infinite ease-in-out reverse;
+}
+
 body::before,
 body::after {
   content: "";
