@@ -134,7 +134,7 @@ body {
 
 
 /* =========================
-   GLOBAL CONTAINER
+   GLOBAL CONTAINER 3, 7, 18, 0.85
 ========================= */
 .container {
   max-width: 1100px;
@@ -147,26 +147,34 @@ body {
 ========================= */
 header {
   position: fixed;
-  top: 1.5rem;         /* Floats it down from the top */
-  left: 0;
-  right: 0;
-  margin: 0 auto;      /* Perfectly centers it without relying on transforms */
-  width: 96%;          /* Leaves a 2% gap on the left and right */
-  max-width: 1400px;   /* Stops it from stretching too far on massive ultrawide monitors */
-  background: rgba(31, 41, 55, 0.85);
+  top: 0;                  /* Flush against the top edge of the browser */
+  left: 0;                 /* Flush against the left edge */
+  width: 100%;             /* Spans the entire screen */
+  max-width: none;         /* Removes any width limits on the background */
+  margin: 0;
+  
+  /* Using the lighter 'Card Match' color we discussed */
+  background: rgba(3, 7, 18, 0.85); 
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(255, 255, 255, 0.05); /* Restores the subtle border */
-  border-radius: 100px; /* Restores the pill shape */
+  
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* Subtle line separating it from content */
+  border-radius: 0;        /* Removes the pill curves */
   z-index: 1000;
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
-  animation: revealDown 1s var(--ease-premium) forwards; 
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  
+  animation: revealDown 1s var(--ease-premium) forwards;
 }
 
 nav {
-  padding: 1rem 2.5rem; /* Extra padding so the logo doesn't touch the curved edges */
+  /* This specifically aligns your logo and links with your main content! */
+  max-width: 1100px;       /* Matches your global .container max-width */
+  margin: 0 auto;          /* Centers the invisible nav box */
+  padding: 1.2rem clamp(1rem, 4vw, 2rem); /* Matches your .container padding */
+  
   display: flex;
-  justify-content: space-between; 
+  justify-content: space-between;
   align-items: center;
   width: 100%;
 }
