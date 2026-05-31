@@ -88,6 +88,17 @@ body {
   100% { background-position: 120% 0; }
 }
 
+@keyframes revealDownMobile {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* Zero horizontal shift! */
+  }
+}
+
 /* =========================
    BACKGROUND GLOW
 ========================= */
@@ -721,11 +732,13 @@ input:focus, textarea:focus {
 
 @media (max-width: 768px) {
   header {
-    top: 0;   /* ADD THIS */
+    top: 0;
+    left: 0;  /* Lock it to the left edge */
     width: 100%;
     border-radius: 0;
     border-inline: none;
     background: rgba(3, 7, 18, 0.92);
+    animation: revealDownMobile 1s var(--ease-premium) forwards; /* Use the new animation */
   }
 
   nav {
