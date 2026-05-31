@@ -153,7 +153,7 @@ header {
   margin: 0 auto;      /* Perfectly centers it without relying on transforms */
   width: 96%;          /* Leaves a 2% gap on the left and right */
   max-width: 1400px;   /* Stops it from stretching too far on massive ultrawide monitors */
-  background: rgba(3, 7, 18, 0.85);
+  background: rgba(31, 41, 55, 0.85);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
   border: 1px solid rgba(255, 255, 255, 0.05); /* Restores the subtle border */
