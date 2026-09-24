@@ -1,6 +1,6 @@
-import loominoImg from './assets/loomino.png';
-import luxisoImg from './assets/luxyso.png';
-import facultyImg from './assets/faculty.png';
+import loominoImg from '../assets/loomino.png';
+import luxisoImg from '../assets/luxyso.png';
+import facultyImg from '../assets/faculty.png';
 
 export default function Projects() {
   const projectsData = [
@@ -9,7 +9,7 @@ export default function Projects() {
       subtitle: "Production E-Commerce Platform",
       description: "Architected and deployed a production e-commerce platform featuring 9 storefront pages and a 12-screen React admin panel wired to Django REST endpoints. Hosted on AWS EC2 with PostgreSQL, Gunicorn, and Nginx.",
       tags: ["React", "Django", "PostgreSQL", "AWS"],
-      codeLink: "https://github.com/IstiakNabil",
+      codeLink: "https://github.com/IstiakNabil/Loomino",
       urlSlug: "loominobd.com",
       // 2. Pass the imported variable (NO quotes)
       image: loominoImg 
@@ -28,7 +28,6 @@ export default function Projects() {
       subtitle: "UAP CSE Department Platform",
       description: "Contributed to a comprehensive Django-based management system, currently live and in active daily use. Implemented complex backend logic for automatic, seniority-based role succession and faculty position assignments.",
       tags: ["Python", "Django", "PostgreSQL"],
-      codeLink: "https://github.com/IstiakNabil",
       urlSlug: "uap-cse.management",
       image: facultyImg 
     }
