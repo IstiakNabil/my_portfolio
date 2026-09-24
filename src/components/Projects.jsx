@@ -1,67 +1,57 @@
 export default function Projects() {
-  // 1. Array data repository for all your engineering builds
   const projectsData = [
     {
-      title: "EduVerse",
-      subtitle: "An Online Learning Platform",
-      description: "A full-stack, scale-ready learning platform featuring comprehensive course creation pipelines, secure enrollment state architectures, and an interactive fluid content delivery engine.",
-      tags: ["Django", "React.js", "PostgreSQL"],
-      codeLink: "https://github.com/IstiakNabil/EDUVERSE",
-      urlSlug: "eduverse.platform",
-      // CRITICAL: Double check your filename in the public/ folder. 
-      // If it's a jpeg, change extension to .jpg or .jpeg accordingly.
-      image: "/image1.png" 
+      title: "Loomino",
+      subtitle: "Production E-Commerce Platform",
+      description: "Architected and deployed a production e-commerce platform featuring 9 storefront pages and a 12-screen React admin panel wired to Django REST endpoints. Hosted on AWS EC2 with PostgreSQL, Gunicorn, and Nginx.",
+      tags: ["React", "Django", "PostgreSQL", "AWS"],
+      codeLink: "https://github.com/IstiakNabil",
+      urlSlug: "loominobd.com",
+      image: "/loomino.png" 
     },
     {
-      title: "Ticketing Management Database System For Airline Operations",
-      subtitle: "Secure Data Architecture for Airline Ticketing",
-      description: "A robust ticketing management system designed for airline operations, featuring a secure data architecture that optimizes booking workflows, passenger information management, and real-time inventory tracking.",
-      tags: ["MySQL"],
-      codeLink: "https://www.linkedin.com/posts/istiak-ahmed-341513216_a-ticketing-management-system-for-airplanes-ugcPost-7269683849981235200-KAWD?utm_source=share&utm_medium=member_desktop&rcm=ACoAADaJgyEBrayigNdWhh2Naku-Bsb2oX8fQ9M", // Uses LinkedIn
-      urlSlug: "TicketingManagementSystem.airline",
-      image: "/image.png"
+      title: "Luxiso",
+      subtitle: "E-Commerce & Custom POS System",
+      description: "Deployed a rebranded e-commerce platform on AWS EC2 via Docker Compose. Built a custom multi-location POS integrated with the storefront through a shared stock pool that dynamically decrements inventory across all channels.",
+      tags: ["React", "Django", "Docker", "AWS"],
+      codeLink: "https://github.com/IstiakNabil/Luxiso",
+      urlSlug: "luxyso.com",
+      image: "/luxiso.png"
+    },
+    {
+      title: "Faculty Management System",
+      subtitle: "UAP CSE Department Platform",
+      description: "Contributed to a comprehensive Django-based management system, currently live and in active daily use. Implemented complex backend logic for automatic, seniority-based role succession and faculty position assignments.",
+      tags: ["Python", "Django", "PostgreSQL"],
+      codeLink: "https://github.com/IstiakNabil",
+      urlSlug: "uap-cse.management",
+      image: "/faculty-sys.png"
     }
   ];
 
   return (
     <section id="projects">
-      <h2 className="section-title">Featured Projects</h2>
-      
+      <h2 className="section-title">Featured Engineering</h2>
       <div className="projects-grid">
         {projectsData.map((project, index) => (
           <div className="premium-project-card" key={index}>
-            
-            {/* Left Column: Technical Metadata & Narrative */}
             <div className="project-details-side">
               <div className="project-meta-tags">
                 {project.tags.map((tag, tIdx) => (
-                  <span 
-                    key={tIdx} 
-                    className={`tech-tag ${tag.toLowerCase().replace('.', '')}`}
-                  >
+                  <span key={tIdx} className={`tech-tag ${tag.toLowerCase()}`}>
                     {tag}
                   </span>
                 ))}
               </div>
-              
               <h3 className="project-display-title">{project.title}</h3>
               <span className="project-subtitle">{project.subtitle}</span>
-              
               <p className="project-narrative-text">{project.description}</p>
-              
               <div className="project-action-links">
-                <a 
-                  href={project.codeLink} 
-                  target="_blank" 
-                  rel="noreferrer" 
-                  className="action-link-btn primary"
-                >
+                <a href={project.codeLink} target="_blank" rel="noreferrer" className="action-link-btn primary">
                   View <span className="arrow">→</span>
                 </a>
               </div>
             </div>
-
-            {/* Right Column: Immersive Window Frame Mockup */}
             <div className="project-media-side">
               <div className="browser-window-frame">
                 <div className="window-header-dots">
@@ -70,27 +60,23 @@ export default function Projects() {
                   <span className="dot expand"></span>
                   <span className="window-url-bar">{project.urlSlug}</span>
                 </div>
-                
                 <div className="window-view-viewport">
                   {project.image ? (
                     <img 
                       src={project.image} 
                       alt={`${project.title} Interface Mockup`}
                       onError={(e) => {
-                        // Resilient Fallback UI Mechanism if your image filename has a mismatch
                         e.target.style.display = 'none';
                         e.target.parentNode.classList.add('viewport-fallback-active');
                       }}
                     />
                   ) : null}
-                  {/* Subtle decorative grid backing that serves as a premium placeholder placeholder */}
                   <div className="viewport-grid-placeholder-mesh">
                     <span>Code Execution Architecture View</span>
                   </div>
                 </div>
               </div>
             </div>
-
           </div>
         ))}
       </div>

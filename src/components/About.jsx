@@ -14,6 +14,37 @@ export default function About() {
         </p>
       </div>
     ),
+    experience: (
+      <div className="tab-pane-content operational-pane">
+        <div className="education-timeline-item">
+          <span className="time-badge">Jan 2026 - Present</span>
+          <h4>Technical Director & Co-founder</h4>
+          <p>Alignedge</p>
+          <ul className="premium-achievements-list">
+            <li>Direct technical operations, overseeing the end-to-end development and deployment of client websites and full-stack applications.</li>
+            <li>Architect and build scalable production platforms for clients, successfully delivering major e-commerce projects like Loomino and Luxiso.</li>
+          </ul>
+        </div>
+        <div className="education-timeline-item">
+          <span className="time-badge">Oct 2026 - Present</span>
+          <h4>Web Developer</h4>
+          <p>Tiffin bd</p>
+          <ul className="premium-achievements-list">
+            <li>Maintain and optimize the official company website, resolving technical bugs and streamlining performance.</li>
+            <li>Develop and implement new application features, improving overall system functionality.</li>
+          </ul>
+        </div>
+        <div className="education-timeline-item">
+          <span className="time-badge">Aug 2026 - Present</span>
+          <h4>UI/UX Intern</h4>
+          <p>eutropia-it (Remote)</p>
+          <ul className="premium-achievements-list">
+            <li>Conduct comprehensive UI/UX user research to identify interface pain points across primary workflows.</li>
+            <li>Formulate detailed analytical reports to guide collaborative design decisions in Figma.</li>
+          </ul>
+        </div>
+      </div>
+    ),
     competencies: (
       <div className="tab-pane-content metrics-pane-grid">
         <div className="mini-metric-card">
@@ -33,45 +64,37 @@ export default function About() {
         <div className="mini-metric-card">
           <div className="mini-card-header">
             <span className="bullet">✦</span>
-            <h4>System Design</h4>
+            <h4>DevOps & Cloud</h4>
           </div>
-          <p>Optimizing server pipelines, memory profiles, and structural object relationships.</p>
+          <p>Deploying production-ready applications utilizing AWS EC2, Docker, and CI/CD pipelines.</p>
         </div>
       </div>
     ),
     education: (
       <div className="tab-pane-content operational-pane">
-        
-        {/* ACADEMIC CORE WITH CGPA BADGE */}
         <div className="education-timeline-item">
           <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
-            <span className="time-badge">Academic Core</span>
+            <span className="time-badge">Expected Dec 2026</span>
             <span className="time-badge cgp-accent">CGPA: 3.79 / 4.00</span>
           </div>
           <h4>B.Sc. in Computer Science & Engineering</h4>
           <p>University of Asia Pacific (UAP)</p>
           <p style={{ marginTop: '0.5rem', fontSize: '0.95rem' }}>
-            Applying rigorous mathematical frameworks, algorithmic efficiency metrics, and formal data processing models directly to real-world software engineering scenarios.</p>
+            <strong>Awards:</strong> Vice-Chancellor's Award (1x) & Dean's Award (3x) for academic excellence.
+          </p>
         </div>
-
-        {/* RE-INTEGRATED BULLETPROOF MILESTONES */}
         <div className="education-timeline-item">
           <span className="time-badge excellence-badge">Key Milestones</span>
           <h4 style={{ marginBottom: '1rem' }}>Leadership & Technical Distinctions</h4>
-          
           <ul className="premium-achievements-list">
             <li>
-              <strong className="accent-text">ICPC Regional Contestant</strong> — Solved complex algorithmic and data structure problems under intense competitive time constraints.
+              <strong className="accent-text">ICPC Regional Contestant & AtCoder Participant</strong> — Solved complex algorithmic and data structure problems under intense competitive time constraints.
             </li>
             <li>
               <strong className="accent-text">President, Math Club (CSE), UAP</strong> — Spearheaded academic workshops, curated competitive curriculum, and mentored peers through intensive problem-solving sessions.
             </li>
-            <li>
-              <strong className="accent-text">Hackathon Competitor</strong> — Conceptualized and engineered functional full-stack prototypes under rapid-delivery deployment environments.
-            </li>
           </ul>
         </div>
-
       </div>
     )
   };
@@ -79,10 +102,7 @@ export default function About() {
   return (
     <section id="about">
       <h2 className="section-title">About Me</h2>
-      
       <div className="about-dashboard-container">
-        
-        {/* SIDEBAR NAVIGATION - CLEANED NAMES */}
         <div className="dashboard-sidebar">
           <button 
             className={`sidebar-tab-btn ${activeTab === 'story' ? 'tab-active' : ''}`}
@@ -90,14 +110,18 @@ export default function About() {
           >
             The Narrative
           </button>
-          
+          <button 
+            className={`sidebar-tab-btn ${activeTab === 'experience' ? 'tab-active' : ''}`}
+            onClick={() => setActiveTab('experience')}
+          >
+            Experience
+          </button>
           <button 
             className={`sidebar-tab-btn ${activeTab === 'competencies' ? 'tab-active' : ''}`}
             onClick={() => setActiveTab('competencies')}
           >
             Competencies
           </button>
-          
           <button 
             className={`sidebar-tab-btn ${activeTab === 'education' ? 'tab-active' : ''}`}
             onClick={() => setActiveTab('education')}
@@ -105,12 +129,9 @@ export default function About() {
             Education & Excellence
           </button>
         </div>
-
-        {/* DISPLAY CONTAINER */}
         <div className="dashboard-display-view">
           {tabContents[activeTab]}
         </div>
-
       </div>
     </section>
   );
