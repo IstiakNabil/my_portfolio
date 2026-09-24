@@ -17,15 +17,6 @@ export default function About() {
     experience: (
       <div className="tab-pane-content operational-pane">
         <div className="education-timeline-item">
-          <span className="time-badge">Jan 2026 - Present</span>
-          <h4>Technical Director & Co-founder</h4>
-          <p>Alignedge</p>
-          <ul className="premium-achievements-list">
-            <li>Direct technical operations, overseeing the end-to-end development and deployment of client websites and full-stack applications.</li>
-            <li>Architect and build scalable production platforms for clients, successfully delivering major e-commerce projects like Loomino and Luxiso.</li>
-          </ul>
-        </div>
-        <div className="education-timeline-item">
           <span className="time-badge">Oct 2026 - Present</span>
           <h4>Web Developer</h4>
           <p>Tiffin bd</p>
@@ -41,6 +32,15 @@ export default function About() {
           <ul className="premium-achievements-list">
             <li>Conduct comprehensive UI/UX user research to identify interface pain points across primary workflows.</li>
             <li>Formulate detailed analytical reports to guide collaborative design decisions in Figma.</li>
+          </ul>
+        </div>
+        <div className="education-timeline-item">
+          <span className="time-badge">Jan 2026 - Present</span>
+          <h4>Technical Director & Co-founder</h4>
+          <p>Alignedge</p>
+          <ul className="premium-achievements-list">
+            <li>Direct technical operations, overseeing the end-to-end development and deployment of client websites and full-stack applications.</li>
+            <li>Architect and build scalable production platforms for clients, successfully delivering major e-commerce projects like Loomino and Luxiso.</li>
           </ul>
         </div>
       </div>

@@ -1,8 +1,22 @@
 export default function Footer() {
   const currentYear = new Date().getFullYear();
   return (
-    <footer className="site-footer">
-      <div className="direct-channels-list horizontal">
+    // 1. Ensure the entire footer acts as a centered column
+    <footer className="site-footer" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+      
+      {/* 2. Force the card container to wrap items nicely and center them */}
+      <div 
+        className="direct-channels-list horizontal" 
+        style={{ 
+          display: 'flex', 
+          flexWrap: 'wrap', 
+          justifyContent: 'center', 
+          gap: '1rem', 
+          maxWidth: '900px', 
+          width: '100%',
+          margin: '0 auto 2rem auto' 
+        }}
+      >
         
         <a href="mailto:istiaknabil.dev@gmail.com" className="channel-card">
           <div className="channel-details">
@@ -33,7 +47,9 @@ export default function Footer() {
         </a>
 
       </div>
-      <div className="footer-copyright">
+      
+      {/* 3. Ensure copyright text stays centered at the very bottom */}
+      <div className="footer-copyright" style={{ textAlign: 'center', width: '100%' }}>
         <p>&copy; {currentYear} MD. ISTIAK AHAMMED NABIL. All rights reserved.</p>
       </div>
     </footer>

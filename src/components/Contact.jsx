@@ -5,24 +5,26 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact">
-      <h2 className="section-title">Get In Touch</h2>
+    <section id="contact" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+      {/* 1. Added inline styles to perfectly center the title above the form */}
+      <h2 className="section-title" style={{ textAlign: 'center', width: '100%', marginBottom: '2rem' }}>
+        Get In Touch
+      </h2>
       
-      <div className="contact-vertical-wrapper">
+      <div className="contact-vertical-wrapper" style={{ width: '100%', maxWidth: '700px' }}>
         
-        {/* 1. TOP HEADER NARRATIVE */}
-        <div className="contact-header-text">
-          <h3>Let's build something exceptional</h3>
+        {/* 2. Ensured the narrative text remains beautifully centered */}
+        <div className="contact-header-text" style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
+          <h3 style={{ marginBottom: '1rem' }}>Let's build something exceptional</h3>
           <p className="contact-panel-narrative">
             Whether you want to discuss backend optimization pipelines, core algorithmic problems, or upcoming engineering opportunities—drop a message or connect across my networks.
           </p>
         </div>
 
-        {/* 2. MIDDLE WIDE FORM */}
+        {/* 3. The form panel remains unchanged */}
         <div className="contact-form-panel">
           <form onSubmit={handleFormSubmit} className="premium-terminal-form">
             
-            {/* Side-by-side inputs for Name and Email */}
             <div className="form-input-row">
               <div className="form-input-group">
                 <label htmlFor="name">Your Name</label>
@@ -45,9 +47,6 @@ export default function Contact() {
           </form>
         </div>
           
-        {/* 3. BOTTOM NETWORK CHANNELS */}
-        
-
       </div>
     </section>
   );
