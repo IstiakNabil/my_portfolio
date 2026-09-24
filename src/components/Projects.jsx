@@ -25,7 +25,7 @@ export default function Projects() {
       subtitle: "UAP CSE Department Platform",
       description: "Contributed to a comprehensive Django-based management system, currently live and in active daily use. Implemented complex backend logic for automatic, seniority-based role succession and faculty position assignments.",
       tags: ["Python", "Django", "PostgreSQL"],
-      codeLink: "https://github.com/IstiakNabil",
+      codeLink: "https://cse.uap-bd.edu/people/faculty/",
       image: facultyImg 
     },
     {
@@ -33,7 +33,7 @@ export default function Projects() {
       subtitle: "AI/ML Research Project",
       description: "Researching and developing a conformal risk-controlled cascade pipeline model to accurately detect and classify manufacturing defects in fabric. Applying advanced machine learning techniques to improve the reliability, precision, and efficiency of automated quality control systems.",
       tags: ["Python", "PyTorch", "Computer Vision", "Machine Learning"],
-      codeLink: "https://github.com/IstiakNabil", 
+      codeLink: "https://github.com/IstiakNabil/EfficientAD", 
       image: null // No image for this project
     }
   ];
@@ -114,7 +114,7 @@ export default function Projects() {
                     onMouseOver={(e) => e.currentTarget.style.transform = 'translateY(-2px)'}
                     onMouseOut={(e) => e.currentTarget.style.transform = 'translateY(0)'}
                   >
-                    View Repository →
+                    View Project →
                   </a>
                 </div>
               )}
