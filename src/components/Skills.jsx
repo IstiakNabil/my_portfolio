@@ -40,7 +40,7 @@ export default function TechnicalArsenal() {
 
   return (
     <section id="skills" className="skills-container">
-      <h2 className="section-title">Technical Arsenal</h2>
+      <h2 className="section-title">Technical Skills</h2>
       <div className="arsenal-grid">
         {skillCategories.map((category, idx) => (
           <div className="arsenal-card" key={idx}>

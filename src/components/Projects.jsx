@@ -40,7 +40,7 @@ export default function Projects() {
 
   return (
     <section id="projects" style={{ padding: '4rem 5%', maxWidth: '1200px', margin: '0 auto' }}>
-      <h2 className="section-title" style={{ textAlign: 'center', marginBottom: '3rem' }}>Featured Engineering</h2>
+      <h2 className="section-title" style={{ textAlign: 'left', marginBottom: '3rem' }}>Projects</h2>
       
       <div style={{ display: 'flex', flexDirection: 'column', gap: '3rem' }}>
         {projectsData.map((project, index) => (
