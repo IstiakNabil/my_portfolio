@@ -30,7 +30,7 @@ export default function Projects() {
       tags: ["Python", "Django", "PostgreSQL"],
       urlSlug: "uap-cse.management",
       image: facultyImg 
-    }
+    },
 
     {
       title: "Fabric Anomaly Detection",
