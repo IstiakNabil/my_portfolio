@@ -5,40 +5,39 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-      {/* 1. Added inline styles to perfectly center the title above the form */}
-      <h2 className="section-title" style={{ textAlign: 'center', width: '100%', marginBottom: '2rem' }}>
-        Get In Touch
-      </h2>
+    <section id="contact">
+      <h2 className="section-title">Get In Touch</h2>
       
-      <div className="contact-vertical-wrapper" style={{ width: '100%', maxWidth: '700px' }}>
+      {/* Container constrained to a clean readable width, standard left flow */}
+      <div className="contact-vertical-wrapper" style={{ maxWidth: '800px', margin: '0' }}>
         
-        {/* 2. Ensured the narrative text remains beautifully centered */}
-        <div className="contact-header-text" style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
-          <h3 style={{ marginBottom: '1rem' }}>Let's build something exceptional</h3>
-          <p className="contact-panel-narrative">
+        {/* Explicitly left-aligned header text */}
+        <div className="contact-header-text" style={{ textAlign: 'left', marginBottom: '2.5rem' }}>
+          <h3 style={{ marginBottom: '1rem', color: '#f8fafc', fontSize: '1.75rem' }}>
+            Let's build something exceptional
+          </h3>
+          <p className="contact-panel-narrative" style={{ color: '#cbd5e1', lineHeight: '1.7', fontSize: '1.05rem', margin: '0' }}>
             Whether you want to discuss backend optimization pipelines, core algorithmic problems, or upcoming engineering opportunities—drop a message or connect across my networks.
           </p>
         </div>
 
-        {/* 3. The form panel remains unchanged */}
         <div className="contact-form-panel">
-          <form onSubmit={handleFormSubmit} className="premium-terminal-form">
+          <form onSubmit={handleFormSubmit} className="premium-terminal-form" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
             
-            <div className="form-input-row">
+            <div className="form-input-row" style={{ width: '100%' }}>
               <div className="form-input-group">
                 <label htmlFor="name">Your Name</label>
-                <input type="text" id="name" required placeholder="John Doe" />
+                <input type="text" id="name" required placeholder="John Doe" style={{ width: '100%' }} />
               </div>
               <div className="form-input-group">
                 <label htmlFor="email">Your Email</label>
-                <input type="email" id="email" required placeholder="john@example.com" />
+                <input type="email" id="email" required placeholder="john@example.com" style={{ width: '100%' }} />
               </div>
             </div>
 
-            <div className="form-input-group">
+            <div className="form-input-group" style={{ width: '100%' }}>
               <label htmlFor="message">Your Message</label>
-              <textarea id="message" required rows="5" placeholder="Let's collaborate on a scale-ready system architecture..."></textarea>
+              <textarea id="message" required rows="5" placeholder="Let's collaborate on a scale-ready system architecture..." style={{ width: '100%' }}></textarea>
             </div>
 
             <button type="submit" className="form-submit-btn">
