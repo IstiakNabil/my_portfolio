@@ -57,13 +57,13 @@ export default function Hero() {
           <p className="hero-description">
             Computer Science student specializing in robust backend architectures using Django and dynamic interfaces via React.js.
           </p>
-          <a href="https://drive.google.com/file/d/19TXQQmVTEtXkWitu-Jqqd1KiFEMuWl5X/view?usp=sharing" className="cv-button" target="_blank" rel="noreferrer">
+          <a href="/Nabil_CV.pdf" className="cv-button" target="_blank" rel="noreferrer">
             View Credentials
           </a>
-      </div> 
-      <div className="img-container">
-        <img className="img" src="/Nabil.jpg" alt="Muhammad Nabil Portfolio Avatar" />
-      </div>
+        </div> 
+        <div className="img-container">
+          <img className="img" src="/Nabil.jpg" alt="Istiak Ahammed Nabil Portfolio Avatar" />
+        </div>
     </section>
   );
 }
