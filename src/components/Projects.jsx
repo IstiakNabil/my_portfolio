@@ -33,7 +33,7 @@ export default function Projects() {
       subtitle: "AI/ML Research Project",
       description: "Researching and developing a conformal risk-controlled cascade pipeline model to accurately detect and classify manufacturing defects in fabric. Applying advanced machine learning techniques to improve the reliability, precision, and efficiency of automated quality control systems.",
       tags: ["Python", "PyTorch", "Computer Vision", "Machine Learning"],
-      codeLink: "https://github.com/IstiakNabil", 
+      codeLink: "https://github.com/IstiakNabil/EfficientAD", 
       image: null 
     }
   ];
