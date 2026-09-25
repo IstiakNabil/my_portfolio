@@ -5,7 +5,7 @@ export default function Navbar() {
   return (
     <header className="sticky-header">
       <nav>
-        <div className="logo">Muhammad Nabil</div>
+        <div className="logo">Istiak Ahammed Nabil</div>
         {/* 1. The Burger Button: Clicking it flips the switch */}
         <div className="burger" onClick={() => setIsOpen(!isOpen)}>
           <span></span>
